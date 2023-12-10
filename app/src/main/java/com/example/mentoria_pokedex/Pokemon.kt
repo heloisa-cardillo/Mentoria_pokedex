@@ -7,3 +7,7 @@ data class Pokemon (
     val types: List<PokemonType>
 )
 
+{
+    val formattedNumber = number.toString().padStart(3,'0')
+}
+

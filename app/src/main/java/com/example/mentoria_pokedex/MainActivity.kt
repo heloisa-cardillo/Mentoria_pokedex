@@ -22,10 +22,17 @@ class MainActivity : AppCompatActivity() {
 
         val recyclerView = findViewById<RecyclerView>(R.id.rvPokemons)
 
-        val pokemons = listOf(
-            Pokemon (
-                
+        val pidgeot = Pokemon(
+            "https://assets.pokemon.com/assets/cms2/img/pokedex/full/018.png",
+            4,
+            "Pidgeot",
+            listOf(
+                PokemonType("Flying")
             )
+
+        )
+        val pokemons = listOf(
+            pidgeot, pidgeot, pidgeot, pidgeot
         )
 
         val layoutManager = LinearLayoutManager(this)
