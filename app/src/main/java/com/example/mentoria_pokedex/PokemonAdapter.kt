@@ -7,9 +7,10 @@ import android.view.ViewGroup
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 
 class PokemonAdapter(
-    private val items: List<Pokemon>
+    private val items: List<Pokemon?>
 ) : RecyclerView.Adapter<PokemonAdapter.ViewHolder>() {
 
 
@@ -28,7 +29,9 @@ class PokemonAdapter(
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
         val item = items[position]
-        holder.bindView(item)
+        if (item != null) {
+            holder.bindView(item)
+        }
     }
     //qual ViewHolder esta aparecendo e qual a posicao dele
 
@@ -42,16 +45,21 @@ class PokemonAdapter(
             val tvType2 = itemView.findViewById<TextView>(R.id.tvType2)
 
             //TODO: Load image with Glide
-            tvNumber.text = "N ${item.formattedNumber}"
-            tvName.text = item.name
-            tvType1.text = item.types[0].name
 
-            if (item.types.size >1) {
-                tvType2.visibility = View.VISIBLE
-                tvType2.text = item.types[1].name
-            } else {
-                tvType2.visibility = View.GONE
+            item.let {
+                Glide.with(itemView.context).load(it.imagenUrl).into(ivPokemon)
+                tvNumber.text = "N ${item.formattedNumber}"
+                tvName.text = item?.name
+                tvType1.text = item.types[0].name
+
+                if (item.types.size >1) {
+                    tvType2.visibility = View.VISIBLE
+                    tvType2.text = item.types[1].name
+                } else {
+                    tvType2.visibility = View.GONE
+                }
             }
+
         }
     }
 

@@ -13,19 +13,6 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.main_activity)
 
         recyclerView = findViewById(R.id.rvPokemons)
-//
-//        val pidgeot = Pokemon(
-//            "https://assets.pokemon.com/assets/cms2/img/pokedex/full/018.png",
-//            4,
-//            "Pidgeot",
-//            listOf(
-//                PokemonType("Flying")
-//            )
-//
-//        )
-//        val pokemons = listOf(
-//            pidgeot, pidgeot, pidgeot, pidgeot
-//        )
 
         Thread(Runnable {
             loadPokemon()
@@ -38,8 +25,26 @@ class MainActivity : AppCompatActivity() {
 
         pokemonsApiResult?.results?.let {
 
-            val pokemons: List<Pokemon> = it.map {
-             val number =
+            val pokemons: List<Pokemon?> = it.map {
+                val number = it.url
+                    .replace("https://pokeapi.co/api/v2/pokemon/", "")
+                    .replace("/", "").toInt()
+
+                val pokemonApiResult= PokemonRepository.getPokemon(number)
+
+
+                pokemonApiResult?.let {
+                    Pokemon (
+                        pokemonApiResult.id,
+                        pokemonApiResult.name,
+                        pokemonApiResult.types.map {
+                            PokemonType("socorro")
+
+                        })
+
+                }
+
+
             }
 
             val layoutManager = LinearLayoutManager(this)
