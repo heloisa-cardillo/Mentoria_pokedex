@@ -36,9 +36,9 @@ class MainActivity : AppCompatActivity() {
                 pokemonApiResult?.let {
                     Pokemon (
                         pokemonApiResult.id,
-                        pokemonApiResult.name,
+                        pokemonApiResult.name.capitalize(),
                         pokemonApiResult.types.map {
-                            PokemonType("socorro")
+                            PokemonType("help")
 
                         })
 

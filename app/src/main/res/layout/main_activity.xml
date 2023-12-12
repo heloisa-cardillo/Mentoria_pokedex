@@ -10,7 +10,7 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPokemons"
         android:layout_width="284dp"
-        android:layout_height="290dp"
+        android:layout_height="274dp"
         android:layout_marginStart="50dp"
         android:background="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
