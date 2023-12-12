@@ -14,9 +14,9 @@ class MainActivity : AppCompatActivity() {
 
         recyclerView = findViewById(R.id.rvPokemons)
 
-        Thread(Runnable {
+        Thread {
             loadPokemon()
-        }).start()
+        }.start()
 
     }
 

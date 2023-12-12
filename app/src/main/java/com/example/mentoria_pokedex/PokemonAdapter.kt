@@ -1,6 +1,5 @@
 package com.example.mentoria_pokedex
 
-import android.annotation.SuppressLint
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -36,7 +35,7 @@ class PokemonAdapter(
     //qual ViewHolder esta aparecendo e qual a posicao dele
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        @SuppressLint("WrongViewCast")
+
         fun bindView(item: Pokemon) {
             val ivPokemon = itemView.findViewById<ImageView>(R.id.ivPokemon)
             val tvNumber = itemView.findViewById<TextView>(R.id.tvNumber)
@@ -44,7 +43,7 @@ class PokemonAdapter(
             val tvType1 = itemView.findViewById<TextView>(R.id.tvType1)
             val tvType2 = itemView.findViewById<TextView>(R.id.tvType2)
 
-            //TODO: Load image with Glide
+            //Load image with Glide
 
             item.let {
                 Glide.with(itemView.context).load(it.imagenUrl).into(ivPokemon)
