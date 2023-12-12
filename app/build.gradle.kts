@@ -80,5 +80,14 @@ dependencies {
     implementation ("com.squareup.retrofit2:converter-gson:2.9.0")
 
 
+//    repositories {
+//        mavenCentral()
+//        maven { url "https://dl.bintray.com/sargunv/maven" }
+//    }
+//    dependencies {
+//        implementation ("me.sargunvohra.lib:pokekotlin:v2")
+//    }
+
+
 
 }
