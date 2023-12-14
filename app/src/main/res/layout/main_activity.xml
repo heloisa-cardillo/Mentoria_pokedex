@@ -4,20 +4,20 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/pokedex"
+    android:background="@drawable/image_mainsactivity"
     tools:context=".MainActivity">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvPokemons"
-        android:layout_width="284dp"
-        android:layout_height="274dp"
-        android:layout_marginStart="50dp"
+        android:layout_width="310dp"
+        android:layout_height="344dp"
+        android:layout_marginStart="28dp"
         android:background="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.498"
+        app:layout_constraintVertical_bias="0.45"
         tools:listitem="@layout/pokemon_item" />
 </androidx.constraintlayout.widget.ConstraintLayout>
