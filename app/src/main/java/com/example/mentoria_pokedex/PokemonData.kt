@@ -6,8 +6,10 @@ class PokemonsApiResult (
 
 data class PokemonResult(
     val name: String,
-    val url: String
+    val url: String,
+    var onUrlClickListener: (() -> Unit)? = null
 )
+
 
 data class PokemonApiResult(
     val id:Int,

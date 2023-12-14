@@ -36,6 +36,7 @@ class PokemonAdapter(
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
+
         fun bindView(item: Pokemon) {
             val ivPokemon = itemView.findViewById<ImageView>(R.id.ivPokemon)
             val tvNumber = itemView.findViewById<TextView>(R.id.tvNumber)

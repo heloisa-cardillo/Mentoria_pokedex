@@ -29,8 +29,8 @@ object PokemonRepository {
                 response: Response<PokemonsApiResult>
             ) {
                 if (response.isSuccessful) {
-                   val result=response.body()
-                    callback.onPokemonListRetrieved(result)
+                   val results=response.body()
+                    callback.onPokemonListRetrieved(results)
                 } else {
                     callback.onPokemonListRetrieved(null)
                 }
