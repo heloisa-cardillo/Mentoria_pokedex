@@ -17,20 +17,27 @@ object PokemonRepository {
     }
 
 
-    // metodo retornando direto o resultado -> return call.execute().body()
+    // metodo retornando direto o resultado -> return call.execute().body() -> congela a thread principal
     // sincrona -> É mais eficiente e confiável do que a transmissão assíncrona
     // para transferir a grande quantidade de dados/ sem lacuna entre os dados
     // + rapida
 
-    fun listPokemons(limit: Int = 151): PokemonsApiResult? {
+    fun listPokemons(limit: Int = 10): PokemonsApiResult? {
         val call = service.listPokemons(limit)
         return call.execute().body()
     }
 
-fun getPokemon(number:Int): PokemonApiResult? {
-    val call = PokemonRepository.service.getPokemon(number)
-    return call.execute().body()
+    fun getPokemon(url: String): PokemonApiResult? {
+        val call = PokemonRepository.service.getPokemon(url)
+        return call.execute().body()
+
+    }
 }
+
+interface ListPokemonResultsListener {
+    fun onPokemonListRetrieved(
+        value: PokemonsApiResult
+    )
 }
 
 //enqueue:trata-se de uma função que nos permite

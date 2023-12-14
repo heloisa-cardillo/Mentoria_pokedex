@@ -30,7 +30,7 @@ class MainActivity : AppCompatActivity() {
                     .replace("https://pokeapi.co/api/v2/pokemon/", "")
                     .replace("/", "").toInt()
 
-                val pokemonApiResult= PokemonRepository.getPokemon(number)
+                val pokemonApiResult= PokemonRepository.getPokemon("")
 
 
                 pokemonApiResult?.let {
