@@ -28,7 +28,12 @@ class PokemonAdapter(
 
     fun addPokemons (list: List<Pokemon>) {
         items.addAll(list)
+        sortItemsById()
         notifyDataSetChanged()
+    }
+//tem que ordenar na hora que recebe os dados e nao quando esta mostrando pro usuario
+    private fun sortItemsById() {
+        items.sortBy { it.number }
     }
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

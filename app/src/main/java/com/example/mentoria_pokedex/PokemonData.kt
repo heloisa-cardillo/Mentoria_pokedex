@@ -6,6 +6,8 @@ open class PokemonsApiResult (
 data class PokemonResult(
     val name: String,
     val url: String,
+    val id: Int,
+    val types: List<PokemonSlotType> ,
     var onUrlClickListener: (() -> Unit)? = null
 )
 
